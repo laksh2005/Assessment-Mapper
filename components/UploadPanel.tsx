@@ -131,9 +131,11 @@ function Dropzone({
             type="button"
             onClick={onClear}
             aria-label={`Remove ${title}`}
-            className="absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-[#3a3a3a] text-xs text-white transition hover:bg-black"
+            className="absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-[#3a3a3a] text-white transition hover:bg-black"
           >
-            ✕
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="size-3" aria-hidden>
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
           </button>
         </div>
       </div>

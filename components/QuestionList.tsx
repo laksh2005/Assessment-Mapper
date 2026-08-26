@@ -127,7 +127,7 @@ function QuestionRow({
           <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
             {unanswered && <Tag tone="warn">Unanswered</Tag>}
             {answer && matchBasis === "content" && <Tag tone="neutral">Matched by content</Tag>}
-            {lowConfidence && <Tag tone="bad">Low confidence — verify</Tag>}
+            {lowConfidence && <Tag tone="bad">Low confidence, verify</Tag>}
             {answer && answer.spans.length > 1 && (
               <Tag tone="neutral">Spans {answer.spans.length} pages</Tag>
             )}

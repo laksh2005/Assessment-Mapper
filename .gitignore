@@ -15,3 +15,6 @@ public/pdf.worker.min.mjs
 # Local-only reference material (Figma exports, sample papers)
 design/
 samples/
+
+# Local editor/agent config
+.claude/

@@ -35,7 +35,7 @@ node scripts/make-samples.mjs
 **Pages are rasterized in the browser before upload.** Both inputs, PDF or image, are
 rendered to page bitmaps client-side with pdf.js. The model reasons over the exact bitmap
 the browser displays, so its bounding boxes and the pixels on screen are the same
-coordinate space — no conversion, no scale drift. Boxes are stored as fractions of page
+coordinate space, with no conversion and no scale drift. Boxes are stored as fractions of page
 size and rendered as percentages, staying aligned at any zoom.
 
 **Answer extraction never sees the question paper.** It reports what is written, including
@@ -57,7 +57,7 @@ ambiguous cases reach the model, which matches on content and grades in the same
 | Unanswered question | Verdict `unanswered` (never `incorrect`), badged and counted |
 | Answer matching no question | Kept in its own section, still clickable and highlightable |
 | Mislabelled answer | Content match catches it, tagged "Matched by content" |
-| Low-confidence match | Flagged "Low confidence — verify" below 0.6 |
+| Low-confidence match | Flagged "Low confidence, verify" below 0.6 |
 | Answer spanning pages | One span per page, all highlighted, badge reads `1/2` |
 
 ## Structure
@@ -84,6 +84,6 @@ job; streaming needs no server state at all.
   function timeout.
 - Highlight accuracy depends on the model's bounding boxes. Degenerate boxes are dropped,
   so a bad detection renders as no highlight rather than a box over the whole page.
-- Grading is generative — a first pass for a teacher to review, not a final mark. Marks come
+- Grading is generative: a first pass for a teacher to review, not a final mark. Marks come
   from the paper where printed, defaulting to 1 where not.
 - No auth, no database; state lives in React for the session.

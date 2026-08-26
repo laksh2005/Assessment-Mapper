@@ -171,20 +171,67 @@ function TopBar() {
   return (
     <header className="flex items-center justify-between rounded-[16px] bg-white px-5 py-3 shadow-sm">
       <div className="flex items-center gap-2 text-sm font-medium text-muted">
-        <span aria-hidden>←</span>
-        <span aria-hidden>📋</span>
+        <ArrowLeftIcon />
+        <ClipboardIcon />
         Exams
       </div>
       <div className="flex items-center gap-3 text-muted">
-        <span className="grid size-8 place-items-center rounded-full bg-canvas text-xs">?</span>
-        <span className="grid size-8 place-items-center rounded-full bg-canvas text-xs">🔔</span>
+        <span className="grid size-8 place-items-center rounded-full bg-canvas">
+          <HelpIcon />
+        </span>
+        <span className="grid size-8 place-items-center rounded-full bg-canvas">
+          <BellIcon />
+        </span>
         <span
-          className="grid size-8 place-items-center rounded-full bg-brand-tint text-sm"
+          className="grid size-8 place-items-center rounded-full bg-brand-tint text-brand"
           aria-label="Account"
         >
-          👤
+          <UserIcon />
         </span>
       </div>
     </header>
+  );
+}
+
+const icon = "size-4";
+
+function ArrowLeftIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={icon} aria-hidden>
+      <path d="M19 12H5M5 12l6-6M5 12l6 6" />
+    </svg>
+  );
+}
+function ClipboardIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={icon} aria-hidden>
+      <path d="M9 4h6v3H9z" />
+      <path d="M9 5.5H7a2 2 0 00-2 2V19a2 2 0 002 2h10a2 2 0 002-2V7.5a2 2 0 00-2-2h-2" />
+    </svg>
+  );
+}
+function HelpIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={icon} aria-hidden>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.6 9.5a2.5 2.5 0 114 2.2c-.9.6-1.6 1.1-1.6 2.1" />
+      <path d="M12 17.2h.01" strokeWidth="2.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+function BellIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={icon} aria-hidden>
+      <path d="M18 8a6 6 0 10-12 0c0 6-2 7-2 7h16s-2-1-2-7" />
+      <path d="M13.7 20a2 2 0 01-3.4 0" />
+    </svg>
+  );
+}
+function UserIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={icon} aria-hidden>
+      <circle cx="12" cy="8" r="3.4" />
+      <path d="M4.5 20a7.5 7.5 0 0115 0" />
+    </svg>
   );
 }
